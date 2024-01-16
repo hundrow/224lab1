@@ -1,6 +1,15 @@
 <!-- include AJAx code for printing the contents of the header.html file-->
 <div id="header">
-    
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("header").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "header.html", true);
+        xhttp.send();
+    </script>
 </div>
 <div>
     <h1>This is the h1 inside the body</h1>
@@ -11,14 +20,26 @@
     <button id="button2" onclick="displayMessage(2)">button1</button>
     <p id="message"></p>
 </div>
-    <script>
-        function displayMessage(buttonNumber) {
-            // Display different messages based on the button clicked
-            if (buttonNumber === 1) {
-                document.getElementById("message").textContent = "Button 1 clicked!";
-            } else if (buttonNumber === 2) {
-                document.getElementById("message").textContent = "Button 2 clicked!";
-            }
+<script>
+    function displayMessage(buttonNumber) {
+        // Display different messages based on the button clicked
+        if (buttonNumber === 1) {
+            document.getElementById("message").textContent = "Button 1 clicked!";
+        } else if (buttonNumber === 2) {
+            document.getElementById("message").textContent = "Button 2 clicked!";
         }
+    }
+</script>
+<div id="footer">
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("footer").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "footer.html", true);
+        xhttp.send();
     </script>
+</div>
 <!-- include AJAx code for printing the contents of the footer.html file-->
