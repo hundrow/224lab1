@@ -1,0 +1,24 @@
+<!-- include AJAx code for printing the contents of the header.html file-->
+<div id="header">
+    
+</div>
+<div>
+    <h1>This is the h1 inside the body</h1>
+    <p>a paragraph inside of the body</p>
+</div>
+<div>
+    <button id="button1" onclick="displayMessage(1)">button1</button>
+    <button id="button2" onclick="displayMessage(2)">button1</button>
+    <p id="message"></p>
+</div>
+    <script>
+        function displayMessage(buttonNumber) {
+            // Display different messages based on the button clicked
+            if (buttonNumber === 1) {
+                document.getElementById("message").textContent = "Button 1 clicked!";
+            } else if (buttonNumber === 2) {
+                document.getElementById("message").textContent = "Button 2 clicked!";
+            }
+        }
+    </script>
+<!-- include AJAx code for printing the contents of the footer.html file-->
