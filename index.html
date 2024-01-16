@@ -1,17 +1,19 @@
 <!-- include AJAx code for printing the contents of the header.html file-->
 <div id="header">
     <script>
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("header").innerHTML = this.responseText;
-            }
-        };
-        xhttp.open("GET", "header.html", true);
-        xhttp.send();
+        function addHeader() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("header").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "header.html", true);
+            xhttp.send();
+        }
     </script>
 </div>
-<div>
+<div onload="addHeader()">
     <h1>This is the h1 inside the body</h1>
     <p>a paragraph inside of the body</p>
 </div>
